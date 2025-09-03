@@ -4,14 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="CSStoDo.css">
 </head>
 <body>
     <div class="gridMain">
-        <div></div>
-        <div></div>
-        <div></div>
+
+        <div class="leftRow">
+            <div class="leftNav">
+                <div class="topNavL">
+                    <img class="star" src="star.svg" alt="star icon">
+                    <div>to-do!</div>
+                </div> 
+
+                <div class="topNavR">
+                    <div>bell</div>
+                    <div>close</div>
+                </div>
+            </div>
+
+            <div class="belowNav">
+                <div class="sideGroup1">
+                    <div class="newTask">
+                        <img>
+                        <div class="click4New">New task</div>
+                        <dialog id="form">
+                            <form class="hiddenForm">
+                                <input type="text" placeholder="Task name"></input>
+                                <input type="text" placeholder="Description"></input>
+                                <label>
+                                    Due
+                                    <input type="datetime-local">
+                                </label>
+                                <select>
+                                        <option value="">Priority</option>
+                                        <option value="!">!</option>
+                                        <option value="!!">!!</option>
+                                        <option value="!!!">!!!</option>
+                                </select>
+                                <div>
+                                    <button>Cancel</button>
+                                    <button class="addTask" type="submit">Add task</button>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
+                    <div class="completedTasks">
+                        <img>
+                        <div>Completed tasks</div>
+                    </div>
+                </div>
+
+                <div class="sideGroup2">
+                    <div class="navProjectDiv">
+                        <img>
+                        <div>My Projects</div>
+                    </div>
+                    <div class="addProjectsNav"></div>
+
+
+                </div>
+
+                <div class="sideGroup3">
+                    <div class="today">
+                        <img>
+                        <div>Today</div>
+                    </div>
+                    <div class="upcoming">
+                        <img>
+                        <div>Upcoming</div>
+                    </div>
+                    <div class="calendar">
+                        <img>
+                        <div>Calendar</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        ////// start rendering this side w javascript
+
+        <div class="rightRow">
+            <div class="sayHi">
+                <div class="greeting"></div>
+                <div class="underGreeting">here are your current to-do lists</div>
+            </div>
+
+            <div class="showProject">
+                <div class="projectLeft">
+                    <div class="listName">Name of List</div>
+                    <div class="lineDiv"></div>
+                    <div class="renderCurrentList"></div>
+                    <div class="newTask">New task</div>
+                </div>
+                <div class="projectRight">
+                    <div class="list">Lists</div>
+                    <div class="lineDiv"></div>
+                    <div class="mainProjectList"></div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
     
 </body>
-<script src="index.js"></script>
+<script type="module" src="index.js" defer></script>
 </html>

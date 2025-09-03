@@ -11,4 +11,3 @@ export function createToDo(toDoName, description, dateDue, priority){
     };
 }
 
-const tester = createToDo("h", "hhh", "12-30-20", "urgent");

@@ -1,0 +1,3 @@
+function deleteToDo(todo){
+    todo.
+}

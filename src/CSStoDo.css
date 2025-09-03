@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+.gridMain {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 2fr 2fr;
+}
+
+.leftRow,
+.leftNav,
+.topNavL,
+.topNavR,
+.showProject {
+        display: flex;
+}
+
+.leftRow {
+    flex-direction: column;
+    grid-row: span 3;
+    grid-column: 1;
+    padding-left: 30px;
+    padding-right: 20px;
+    border: 1px solid red;
+}
+
+.leftNav {
+    justify-content: space-between;
+}
+
+.topNavL,
+.topNavR {
+    gap: 10px;
+}
+
+.topColumn {
+    grid-row: 1;
+    grid-column: 2/3;
+}
+
+.star {
+    height: 100%;
+    width: 30px;
+}
+
+.newTask {
+    cursor: pointer;
+}
+
+.leftRow,
+.rightRow {
+    padding-top: 20px;
+}
+
+.rightRow {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+}
+
+.sayHi {
+    padding-top: 60px;
+}
+
+.greeting {
+    font-size: 4rem;
+    font-style: italic;
+}
+
+.underGreeting {
+    font-size: 1.5rem;
+    color: rgb(93, 91, 91);
+    font-style: oblique;
+}
+
+.showProject {
+    gap: 50px;
+    padding-top: 120px;
+}
+
+.listName,
+.list {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.lineDiv {
+    width: 400px;
+    border-top: 1px solid rgb(172, 172, 172);
+    padding-bottom: 30px;
+}

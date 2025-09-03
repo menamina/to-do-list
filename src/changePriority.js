@@ -1,3 +1,3 @@
-function changePriority(newPriority){
-    this.priority = newPriority
+function changePriority(todo, newPriority){
+    todo.priority = newPriority;
 }
