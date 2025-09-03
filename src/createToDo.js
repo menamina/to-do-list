@@ -1,5 +1,6 @@
-export function createToDo(toDoName, description, dateDue, priority){
+export function createToDo(projectName, toDoName, description, dateDue, priority){
     return {
+        projName: projectName,
         toDoName: toDoName,
         description: description,
         dateDue: dateDue,
@@ -10,4 +11,5 @@ export function createToDo(toDoName, description, dateDue, priority){
         }
     };
 }
+
 

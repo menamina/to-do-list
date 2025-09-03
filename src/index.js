@@ -1,33 +1,61 @@
 // import {createToDo} from './createToDo.js';
 //import {changePriority} from './changePriority.js';
+//import {renderHome} from './renderHome.js';
+//import {renderTasks, renderProjects} from './renderTasksAndProjs.js';
 //import './CSStoDo.css';
 //import star from './star.svg';
 
 
-// GREETING!
-const greetingDom = document.querySelector(".greeting");
-const now = new Date();
-const hour = now.getHours();
-let greeting = "";
+//renderHome();
+//renderTasks();
+//renderProjects();
 
-if (hour >= 5 && hour < 12){
-    greeting = "Hi, good morning";
-} else if (hour >= 12 && hour < 18) {
-    greeting = "Hi, good afternoon";
-} else {
-    greeting = "Hi, good evening";
-}
+const home = document.querySelector(".home");
+home.addEventListener('click', () => {
+    renderHome();
+    renderCurrentProjectOnMain();
+})
 
-greetingDom.textContent = greeting;
+// NEW TASK!
+const newTask = document.querySelectorAll(".click4New");
+const showForm = document.getElementById("form");
+const cancel = document.querySelector(".cancel");
 
 
-// SHOW TASK!
-const newTask = document.querySelector(".click4New");
-const form = document.getElementById("form");
+newTask.forEach(button => {
+    button.addEventListener('click', () => {
+    showForm.showModal();
+});
+});
 
-newTask.addEventListener('click', () => {
-    form.showModal();
+showForm.addEventListener('click', (e) => {
+    if (e.target === showForm) {
+        showForm.close();
+    }
+});
+
+cancel.addEventListener('click', ()=> {
+    showForm.close();
+})
+
+// LOGIC FOR ADDING TO DO'S
+const toDoArray = [];
+
+const taskNameInput = form.querySelector('input[placeholder="Task name"]');
+const descriptionInput = form.querySelector('input[placeholder="Description"]');
+const dueDateInput = form.querySelector('input[type="datetime-local"]');
+const mainProjName = form.querySelector('input[placeholder="Project Name"]');
+const prioritySelect = form.querySelector("select");
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newTask = createToDo(mainProjName.value, taskNameInput.value, descriptionInput.value, dueDateInput.value, prioritySelect.value);
+    
+    toDoArray.push(newTask);
+    renderTasks();
+    renderProjects();
+    form.reset();
+    showForm.close();
 })
 
 
-const toDoArray = [];

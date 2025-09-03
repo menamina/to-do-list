@@ -24,11 +24,13 @@
 
             <div class="belowNav">
                 <div class="sideGroup1">
+                    <div class="home">Home</div>
                     <div class="newTask">
                         <img>
                         <div class="click4New">New task</div>
                         <dialog id="form">
                             <form class="hiddenForm">
+                                <input type="text" placeholder="Project Name">
                                 <input type="text" placeholder="Task name"></input>
                                 <input type="text" placeholder="Description"></input>
                                 <label>
@@ -42,7 +44,7 @@
                                         <option value="!!!">!!!</option>
                                 </select>
                                 <div>
-                                    <button>Cancel</button>
+                                    <button class="cancel">Cancel</button>
                                     <button class="addTask" type="submit">Add task</button>
                                 </div>
                             </form>
@@ -55,13 +57,21 @@
                 </div>
 
                 <div class="sideGroup2">
-                    <div class="navProjectDiv">
-                        <img>
-                        <div>My Projects</div>
+                    <div class="myProjsClick">
+                        <div class="navProjectDiv">
+                            <img>
+                            <div>My Projects</div>
+                        </div>
+                        <div class="addProjectsNav">
+                            <button>+</button>
+                            <dialog>
+                                <form>
+
+                                </form>
+                            </dialog>
+                        </div>
                     </div>
-                    <div class="addProjectsNav"></div>
-
-
+                    <div class="renderProjects"></div>
                 </div>
 
                 <div class="sideGroup3">
@@ -83,20 +93,18 @@
             </div>
         </div>
 
-        ////// start rendering this side w javascript
-
         <div class="rightRow">
             <div class="sayHi">
                 <div class="greeting"></div>
-                <div class="underGreeting">here are your current to-do lists</div>
+                <div class="underGreeting"></div>
             </div>
 
             <div class="showProject">
                 <div class="projectLeft">
-                    <div class="listName">Name of List</div>
+                    <div class="listName">Current List</div>
                     <div class="lineDiv"></div>
                     <div class="renderCurrentList"></div>
-                    <div class="newTask">New task</div>
+                    <div class="click4New">New task</div>
                 </div>
                 <div class="projectRight">
                     <div class="list">Lists</div>
