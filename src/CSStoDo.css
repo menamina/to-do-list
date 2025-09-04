@@ -14,7 +14,10 @@
 .leftNav,
 .topNavL,
 .topNavR,
-.showProject {
+.showProject,
+.myProjsClick,
+.addProjectsNav,
+.navProjectDiv{
         display: flex;
 }
 
@@ -24,15 +27,22 @@
     grid-column: 1;
     padding-left: 30px;
     padding-right: 20px;
-    border: 1px solid red;
+    background-color: rgb(255, 252, 247);
+    min-width: 250px;
 }
 
-.leftNav {
+.leftNav,
+.myProjsClick {
     justify-content: space-between;
+    align-items: center;
 }
+
 
 .topNavL,
-.topNavR {
+.topNavR,
+.addProjectsNav {
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
 }
 
@@ -46,7 +56,9 @@
     width: 30px;
 }
 
-.click4New {
+.click4New,
+.home,
+.plusBtn {
     cursor: pointer;
 }
 
@@ -54,6 +66,20 @@
 .rightRow {
     padding-top: 20px;
 }
+
+.sideGroup1,
+.sideGroup2,
+.sideGroup3 {
+    padding-top: 40px;
+}
+
+.plusBtn {
+    border: none;
+    background-color: rgb(255, 252, 247);
+    font-size: 1rem;
+}
+
+/* MAIN PAGE - HERO */
 
 .rightRow {
     display: flex;

@@ -1,26 +1,30 @@
-// import {createToDo} from './createToDo.js';
-//import {changePriority} from './changePriority.js';
-//import {renderHome} from './renderHome.js';
-//import {renderTasks, renderProjects} from './renderTasksAndProjs.js';
-//import './CSStoDo.css';
-//import star from './star.svg';
+import {createToDo} from './createToDo.js';
+import {changePriority} from './changePriority.js';
+import {renderHome} from './renderHome.js';
+import {renderTasks, renderProjects} from './renderTasksAndProjs.js';
+import './CSStoDo.css';
+import star from './star.svg';
 
+const starImg = document.querySelector('.star');
+starImg.src = star;
 
-//renderHome();
-//renderTasks();
-//renderProjects();
+const toDoArray = [];
+
+renderHome();
+renderTasks(toDoArray);
+renderProjects(toDoArray);
 
 const home = document.querySelector(".home");
 home.addEventListener('click', () => {
-    renderHome();
-    renderCurrentProjectOnMain();
+    renderHome(toDoArray);
+    renderProjects(toDoArray);
+    renderTasks(toDoArray);
 })
 
 // NEW TASK!
 const newTask = document.querySelectorAll(".click4New");
 const showForm = document.getElementById("form");
 const cancel = document.querySelector(".cancel");
-
 
 newTask.forEach(button => {
     button.addEventListener('click', () => {
@@ -39,8 +43,8 @@ cancel.addEventListener('click', ()=> {
 })
 
 // LOGIC FOR ADDING TO DO'S
-const toDoArray = [];
 
+const form = showForm.querySelector(".hiddenForm");
 const taskNameInput = form.querySelector('input[placeholder="Task name"]');
 const descriptionInput = form.querySelector('input[placeholder="Description"]');
 const dueDateInput = form.querySelector('input[type="datetime-local"]');

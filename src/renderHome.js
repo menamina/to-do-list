@@ -1,10 +1,11 @@
-const { createElement } = require("react");
 
 export function renderHome(){
-    greetingDom = document.querySelector(".greeting");
+    const greetingDom = document.querySelector(".greeting");
+    greetingDom.textContent = "";
     const now = new Date();
     const hour = now.getHours();
 
+    let greeting = "";
     if (hour >= 5 && hour < 12){
         greeting = "Hi, good morning";
     } else if (hour >= 12 && hour < 18) {
@@ -14,6 +15,7 @@ export function renderHome(){
     };
     greetingDom.textContent = greeting;
 
-    underGreetingText = document.querySelector(".underGreeting");
+    const underGreetingText = document.querySelector(".underGreeting");
+    underGreetingText.textContent = "";
     underGreetingText.textContent = "here are your current to-do lists";
 }

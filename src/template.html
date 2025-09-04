@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSStoDo.css">
 </head>
 <body>
     <div class="gridMain">
@@ -24,8 +23,8 @@
 
             <div class="belowNav">
                 <div class="sideGroup1">
-                    <div class="home">Home</div>
                     <div class="newTask">
+                        <div class="home">Home</div>
                         <img>
                         <div class="click4New">New task</div>
                         <dialog id="form">
@@ -44,7 +43,7 @@
                                         <option value="!!!">!!!</option>
                                 </select>
                                 <div>
-                                    <button class="cancel">Cancel</button>
+                                    <button type="button" class="cancel">Cancel</button>
                                     <button class="addTask" type="submit">Add task</button>
                                 </div>
                             </form>
@@ -63,7 +62,7 @@
                             <div>My Projects</div>
                         </div>
                         <div class="addProjectsNav">
-                            <button>+</button>
+                            <button class="plusBtn">+</button>
                             <dialog>
                                 <form>
 
@@ -116,7 +115,6 @@
         </div>
 
     </div>
-    
+    <script type="module" src="index.js" defer></script>
 </body>
-<script type="module" src="index.js" defer></script>
 </html>
