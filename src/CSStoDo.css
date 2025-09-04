@@ -37,7 +37,6 @@
     align-items: center;
 }
 
-
 .topNavL,
 .topNavR,
 .addProjectsNav {
@@ -58,8 +57,14 @@
 
 .click4New,
 .home,
-.plusBtn {
+.plusBtn,
+.projectsMiniSide,
+.mainProjRend {
     cursor: pointer;
+}
+
+.click4New.two {
+    padding-top: 35px;
 }
 
 .leftRow,

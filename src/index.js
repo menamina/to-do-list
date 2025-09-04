@@ -2,15 +2,17 @@ import {createToDo} from './createToDo.js';
 import {changePriority} from './changePriority.js';
 import {renderHome} from './renderHome.js';
 import {renderTasks, renderProjects} from './renderTasksAndProjs.js';
+import { openProjectIndividual } from './openProjects.js';
 import './CSStoDo.css';
 import star from './star.svg';
-
 const starImg = document.querySelector('.star');
 starImg.src = star;
 
+
+
 const toDoArray = [];
 
-renderHome();
+renderHome(toDoArray);
 renderTasks(toDoArray);
 renderProjects(toDoArray);
 
@@ -19,7 +21,7 @@ home.addEventListener('click', () => {
     renderHome(toDoArray);
     renderProjects(toDoArray);
     renderTasks(toDoArray);
-})
+});
 
 // NEW TASK!
 const newTask = document.querySelectorAll(".click4New");
@@ -40,7 +42,7 @@ showForm.addEventListener('click', (e) => {
 
 cancel.addEventListener('click', ()=> {
     showForm.close();
-})
+});
 
 // LOGIC FOR ADDING TO DO'S
 
@@ -56,10 +58,21 @@ form.addEventListener('submit', (e) => {
     const newTask = createToDo(mainProjName.value, taskNameInput.value, descriptionInput.value, dueDateInput.value, prioritySelect.value);
     
     toDoArray.push(newTask);
-    renderTasks();
-    renderProjects();
+    renderTasks(toDoArray);
+    renderProjects(toDoArray);
     form.reset();
     showForm.close();
-})
+});
+
+// after clicking project display the individ proj's to do
+
+const renderProjectsDiv = document.querySelector(".renderProjects");
+
+renderProjectsDiv.addEventListener('click', (e) => {
+    if (e.target.classList.contains("projectsMiniSide")) {
+        const clickedProject = e.target.textContent;
+        openProjectIndividual(clickedProject, toDoArray);
+    }
+});
 
 
