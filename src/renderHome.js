@@ -17,5 +17,8 @@ export function renderHome(){
 
     const underGreetingText = document.querySelector(".underGreeting");
     underGreetingText.textContent = "";
-    underGreetingText.textContent = "here are your current to-do lists";
+    underGreetingText.textContent = "here is your to-do list";
+
+    const homeLabelforListNames = document.querySelector(".listName");
+    homeLabelforListNames.textContent = "Your to do's";
 }

@@ -52,14 +52,24 @@
 
 .star {
     height: 100%;
-    width: 30px;
+    width: 50px;
 }
 
-.click4New,
-.home,
-.plusBtn,
-.projectsMiniSide,
-.mainProjRend {
+.todo {
+    font-size: 1.5rem;
+}
+
+.leftRow,
+.todo {
+    color: rgb(88, 88, 88);
+}
+
+.sideGroup1,
+.today,
+.upcoming,
+.calendar,
+.click4New.two,
+.projectsMiniSide { 
     cursor: pointer;
 }
 

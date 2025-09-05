@@ -17,8 +17,9 @@ renderProjects(toDoArray);
 
 const home = document.querySelector(".home");
 home.addEventListener('click', () => {
+    renderHome(toDoArray);
     renderTasks(toDoArray);
-    renderProjects(toDoArray);
+    // renderProjects(toDoArray);
 });
 
 // NEW TASK!

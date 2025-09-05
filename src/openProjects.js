@@ -1,9 +1,8 @@
 export function openProjectIndividual(clickedProject, array){
-    const projectLeft = document.querySelector(".projectLeft");
-    const deleteRight = document.querySelector(".projectRight");
-    deleteRight.textContent = "";
-    projectLeft.textContent = "";
-
+    const clearCurrentList = document.querySelector(".renderCurrentList");
+    clearCurrentList.textContent = "";
+    const currentProjName = document.querySelector(".listName");
+    currentProjName.textContent = clickedProject;
 
     const projectNameMatch = array.filter(item => item.projName === clickedProject);
 
@@ -11,6 +10,6 @@ export function openProjectIndividual(clickedProject, array){
         const displayTask = document.createElement("div");
         displayTask.classList.add("clickedProjectsToDo");
         displayTask.textContent = item.toDoName;
-        projectLeft.appendChild(displayTask);
+        clearCurrentList.appendChild(displayTask);
     });
 }
