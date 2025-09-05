@@ -9,7 +9,6 @@ const starImg = document.querySelector('.star');
 starImg.src = star;
 
 
-
 const toDoArray = [];
 
 renderHome(toDoArray);
@@ -18,9 +17,8 @@ renderProjects(toDoArray);
 
 const home = document.querySelector(".home");
 home.addEventListener('click', () => {
-    renderHome(toDoArray);
-    renderProjects(toDoArray);
     renderTasks(toDoArray);
+    renderProjects(toDoArray);
 });
 
 // NEW TASK!
