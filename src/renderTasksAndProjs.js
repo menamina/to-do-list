@@ -25,7 +25,7 @@ export function renderTasks(toDoArray){
         containerdiv.appendChild(deleteBtn);
         renderCurrentList.appendChild(containerdiv);
 
-        markAsComplete(checkbox, task, div);
+        markAsComplete(checkbox, task, div, toDoArray);
         deleteTask(deleteBtn, task, toDoArray, containerdiv);
 
     });

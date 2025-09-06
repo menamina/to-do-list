@@ -1,5 +1,3 @@
-
-
 export function createToDo(projectName, toDoName, description, dateDue, priority){
     return {
         projName: projectName,

@@ -1,16 +1,17 @@
-import { loadTasks, saveTasks } from "./storage";
+import {saveTasks, loadTasks} from "./storage.js";
 import {createToDo} from './createToDo.js';
-import {changePriority} from './changePriority.js';
 import {renderHome} from './renderHome.js';
 import {renderTasks, renderProjects} from './renderTasksAndProjs.js';
 import { openProjectIndividual } from './openProjects.js';
 import './CSStoDo.css';
+
+const toDoArray = loadTasks();
+
 import star from './star.svg';
 const starImg = document.querySelector('.star');
 starImg.src = star;
 
 
-const toDoArray = loadTasks();
 
 renderHome();
 renderTasks(toDoArray);
@@ -20,7 +21,6 @@ const home = document.querySelector(".home");
 home.addEventListener('click', () => {
     renderHome();
     renderTasks(toDoArray);
-    // renderProjects(toDoArray);
 });
 
 // NEW TASK!

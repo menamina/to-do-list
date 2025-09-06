@@ -1,4 +1,5 @@
 import { renderHome } from "./renderHome";
+import { saveTasks } from "./storage.js";
 
 export function deleteProjectAndList(deleteBtn, projectDiv, projName, array) {
     deleteBtn.addEventListener('click', () => {
@@ -10,6 +11,8 @@ export function deleteProjectAndList(deleteBtn, projectDiv, projName, array) {
         };
 
         projectDiv.remove();
+        saveTasks(array);
+        renderHome();
     });
 
 }
