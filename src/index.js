@@ -58,6 +58,7 @@ form.addEventListener('submit', (e) => {
     const newTask = createToDo(mainProjName.value, taskNameInput.value, descriptionInput.value, dueDateInput.value, prioritySelect.value);
     
     toDoArray.push(newTask);
+    console.log("Saving tasks:", toDoArray);
     saveTasks(toDoArray);
     renderTasks(toDoArray);
     renderProjects(toDoArray);
