@@ -1,3 +1,0 @@
-function deleteToDo(todo){
-    todo.
-}

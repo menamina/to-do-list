@@ -1,3 +1,6 @@
+import {renderTasks} from "./renderTasksAndProjs.js";
+
+
 export function openProjectIndividual(clickedProject, array){
     const clearCurrentList = document.querySelector(".renderCurrentList");
     clearCurrentList.textContent = "";
@@ -6,10 +9,7 @@ export function openProjectIndividual(clickedProject, array){
 
     const projectNameMatch = array.filter(item => item.projName === clickedProject);
 
-    projectNameMatch.forEach(item => {
-        const displayTask = document.createElement("div");
-        displayTask.classList.add("clickedProjectsToDo");
-        displayTask.textContent = item.toDoName;
-        clearCurrentList.appendChild(displayTask);
-    });
+    renderTasks(projectNameMatch);
+
+
 }

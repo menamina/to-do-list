@@ -1,3 +1,4 @@
+import { loadTasks, saveTasks } from "./storage";
 import {createToDo} from './createToDo.js';
 import {changePriority} from './changePriority.js';
 import {renderHome} from './renderHome.js';
@@ -9,15 +10,15 @@ const starImg = document.querySelector('.star');
 starImg.src = star;
 
 
-const toDoArray = [];
+const toDoArray = loadTasks();
 
-renderHome(toDoArray);
+renderHome();
 renderTasks(toDoArray);
 renderProjects(toDoArray);
 
 const home = document.querySelector(".home");
 home.addEventListener('click', () => {
-    renderHome(toDoArray);
+    renderHome();
     renderTasks(toDoArray);
     // renderProjects(toDoArray);
 });
@@ -57,6 +58,7 @@ form.addEventListener('submit', (e) => {
     const newTask = createToDo(mainProjName.value, taskNameInput.value, descriptionInput.value, dueDateInput.value, prioritySelect.value);
     
     toDoArray.push(newTask);
+    saveTasks(toDoArray);
     renderTasks(toDoArray);
     renderProjects(toDoArray);
     form.reset();
@@ -73,5 +75,6 @@ renderProjectsDiv.addEventListener('click', (e) => {
         openProjectIndividual(clickedProject, toDoArray);
     }
 });
+
 
 

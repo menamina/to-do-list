@@ -1,15 +1,33 @@
+import { markAsComplete } from "./completeTask.js";
+import { deleteTask } from "./deleteTask.js";
+import { deleteProjectAndList } from "./deleteProject.js";
+
 export function renderTasks(toDoArray){
     const renderCurrentList = document.querySelector(".renderCurrentList");
     renderCurrentList.textContent = "";
     toDoArray.forEach(task => {
-        const div = document.createElement("div");
 
+        const containerdiv = document.createElement("div");
         const checkbox = document.createElement("input");
+        checkbox.classList.add("checkbox");
         checkbox.type = "checkbox";
-
+    
+        const div = document.createElement("div");
+        div.classList.add("task-text");
         div.textContent = `${task.toDoName} ${task.dateDue} ${task.priority}`;
-        renderCurrentList.appendChild(checkbox);
-        renderCurrentList.appendChild(div);
+        
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "X";
+        deleteBtn.classList.add("deleteBtn");
+
+        containerdiv.appendChild(checkbox);
+        containerdiv.appendChild(div);
+        containerdiv.appendChild(deleteBtn);
+        renderCurrentList.appendChild(containerdiv);
+
+        markAsComplete(checkbox, task, div);
+        deleteTask(deleteBtn, task, toDoArray, containerdiv);
+
     });
 }
 
@@ -26,6 +44,13 @@ export function renderProjects(toDoArray){
 
                 projectsOnSideMini.appendChild(renderedProjDiv);
                 renderedProjectNames.add(task.projName);
+
+                const deleteBtn = document.createElement("button");
+                deleteBtn.classList.add("deleteBtn");
+                deleteBtn.textContent = "x";
+                renderedProjDiv.appendChild(deleteBtn);
+
+                deleteProjectAndList(deleteBtn, renderedProjDiv, task.projName, toDoArray);
 
             }
         })
